@@ -131,3 +131,18 @@ if __name__ == '__main__':
     with app.app_context():
         db.create_all()
     app.run(debug=True)
+
+# (Everything else above remains unchanged...)
+
+@app.route('/initdb')
+def initdb():
+    try:
+        db.create_all()
+        return "Database initialized successfully!"
+    except Exception as e:
+        return f"Database initialization failed: {e}", 500
+
+if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()
+    app.run(debug=True)
