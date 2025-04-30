@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: myfiles
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn app:app
+    plan: free
+    envVars:
+      - key: my_secret_key
+        sync: false
+      - key: dnpmsuned
+        sync: false
+      - key: 156884587837459
+        sync: false
+      - key: yTQpJKyLzBOi9SLUlwC7z4CjBPQ
+        sync: false
